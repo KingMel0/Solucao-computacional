@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cifra</string>
+    <string name="cifra_dashboard">Visão Geral</string>
+    <string name="cifra_transactions">Transações</string>
+    <string name="cifra_goals">Metas</string>
+    <string name="cifra_reports">Relatórios</string>
+    <string name="cifra_add_income">Adicionar Receita</string>
+    <string name="cifra_add_expense">Adicionar Despesa</string>
+    <string name="cifra_balance">Saldo Cifra</string>
+    <string name="cifra_total_income">Total Receitas</string>
+    <string name="cifra_total_expenses">Total Despesas</string>
+    <string name="cifra_welcome">Bem-vindo ao Cifra</string>
+    <string name="cifra_slogan">Controle suas finanças com simplicidade</string>
+</resources>

@@ -1,0 +1,82 @@
+# Arquivo .gitignore para Android Studio
+# Criado automaticamente pelo Android Studio
+
+# Arquivos de build
+.gradle
+/build
+/captures
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/local.properties
+/.idea/caches
+/.idea/gradle.xml
+/.idea/compiler.xml
+/.idea/jarRepositories.xml
+/.idea/modules.xml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+
+# Arquivos específicos do Android Studio
+*.iml
+.idea/
+
+# Arquivos específicos do Gradle
+.gradle/
+gradle-app.setting
+
+# Ignorar todos os arquivos .class
+*.class
+
+# Logs
+*.log
+
+# Arquivos de backup
+*.bak
+*.tmp
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do Android
+*.apk
+*.ap_
+*.aab
+
+# Arquivos do Android Studio
+.navigation/
+*.ipr
+*.iws
+
+# Arquivos gerados localmente
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# Arquivos do macOS
+.DS_Store
+
+# Arquivos do Windows
+Thumbs.db
+ehthumbs.db
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de log
+logs/
+*.log
+
+# Arquivos de captura
+captures/

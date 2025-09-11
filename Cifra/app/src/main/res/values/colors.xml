@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores primárias do Cifra -->
+    <color name="cifra_primary">#0066CC</color>
+    <color name="cifra_primary_dark">#004999</color>
+    <color name="cifra_primary_light">#4D94E6</color>
+
+    <!-- Cores secundárias -->
+    <color name="cifra_secondary">#66BB6A</color>
+    <color name="cifra_secondary_dark">#388E3C</color>
+
+    <!-- Cores para transações -->
+    <color name="cifra_income">#4CAF50</color>
+    <color name="cifra_expense">#F44336</color>
+
+    <!-- Cores neutras -->
+    <color name="cifra_background">#FAFAFA</color>
+    <color name="cifra_surface">#FFFFFF</color>
+    <color name="cifra_text_primary">#212121</color>
+    <color name="cifra_text_secondary">#757575</color>
+</resources>
