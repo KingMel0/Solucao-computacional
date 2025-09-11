@@ -1,76 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrçaBem</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrçaBem • Organizador Financeiro</title>
+  <meta name="description" content="Controle suas finanças de forma simples, bonita e 100% responsiva. Registre transações, veja resumos e gere relatórios em poucos cliques." />
+
+  <!-- Fonte moderna e suave -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <h1>Organizador Financeiro</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#funcionalidades">Funcionalidades</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ir para o topo">
+        <span class="brand-badge" aria-hidden="true">₿</span>
+        <span>OrçaBem</span>
+      </a>
+      <nav aria-label="primária">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burger" aria-label="Abrir menu"><span></span></button>
+    </div>
+    <div class="container mobile" id="mobile">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <section class="banner">
-        <div class="banner-content">
-            <h2>Controle suas finanças de forma fácil e prática!</h2>
-            <p>Com nosso organizador financeiro, você pode gerenciar suas entradas, saídas e acompanhar o saldo de forma simples e intuitiva.</p>
-            <a href="#funcionalidades" class="btn">Saiba mais</a>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Seu dinheiro, do seu jeito
+          </span>
+          <h1>Controle suas finanças com clareza e rapidez.</h1>
+          <p>Registre entradas e saídas, veja o saldo em tempo real e gere relatórios limpos. Tudo em um só lugar, sem complicação.</p>
+          <div class="actions">
+            <a href="#funcionalidades" class="btn">Ver funcionalidades</a>
+            <a href="#sobre" class="btn secondary">Saiba mais</a>
+          </div>
         </div>
+        <div class="hero-art fade-up" aria-hidden="true">
+          <div class="card-preview">
+            <div class="rows">
+              <div class="row"><span>Entrada • Salário</span><strong>R$ 3.250,00</strong></div>
+              <div class="row"><span>Saída • Mercado</span><strong>R$ 312,45</strong></div>
+              <div class="row"><span>Saída • Transporte</span><strong>R$ 86,70</strong></div>
+            </div>
+            <div class="kpi">
+              <div class="k"><div class="t">Entradas (mês)</div><div class="v">R$ 5.420</div></div>
+              <div class="k"><div class="t">Saídas (mês)</div><div class="v">R$ 3.190</div></div>
+              <div class="k"><div class="t">Saldo</div><div class="v">R$ 2.230</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="sobre" class="sobre">
-        <h2>Sobre o Organizador Financeiro</h2>
-        <p>O Organizador Financeiro é uma ferramenta projetada para ajudar você a controlar suas finanças pessoais de maneira simples e eficiente. Com ele, você pode registrar suas transações, acompanhar seu saldo e tomar decisões financeiras mais informadas.</p>
+    <!-- SOBRE -->
+    <section id="sobre" class="section container">
+      <h2>Sobre o OrçaBem</h2>
+      <p class="lead">O OrçaBem é seu parceiro para organizar as finanças pessoais. Sem planilhas confusas: você cadastra as movimentações e acompanha tudo com resumos claros, filtros e relatórios objetivos.</p>
+      <div class="about">
+        <div class="box">
+          <h3>Por que usar?</h3>
+          <p style="color:var(--ink-2); margin-top:6px">Foco na simplicidade, velocidade e visual limpo. Ideal para estudantes, famílias e pequenos empreendedores que querem <em>ver</em> para decidir.</p>
+          <ul style="margin-top:12px; color:var(--ink-2); display:grid; gap:8px">
+            <li>• Interface responsiva e acessível</li>
+            <li>• Resumos por categoria, período e conta</li>
+            <li>• Exportação (CSV) e relatórios compactos</li>
+          </ul>
+        </div>
+        <div class="illus">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Pessoa organizando orçamento com notebook e planilha." loading="lazy"/>
+        </div>
+      </div>
     </section>
 
-    <section id="funcionalidades" class="funcionalidades">
+    <!-- FUNCIONALIDADES -->
+    <section id="funcionalidades" class="section" style="background:var(--bg-2)">
+      <div class="container">
         <h2>Funcionalidades</h2>
-        <div class="feature">
-            <h3>Registro de Transações</h3>
-            <p>Registre suas entradas e saídas para manter o controle sobre suas finanças.</p>
+        <p class="lead">Tudo que você precisa para manter as contas no eixo — sem perder tempo.</p>
+        <div class="grid">
+          <article class="feature fade-up">
+            <div class="icon" aria-hidden="true">💸</div>
+            <h3>Registro de transações</h3>
+            <p>Cadastre entradas/saídas em segundos, com notas e categorias. Edição rápida e filtros por período.</p>
+          </article>
+          <article class="feature fade-up">
+            <div class="icon" aria-hidden="true">📊</div>
+            <h3>Resumo financeiro</h3>
+            <p>Totais do mês, evolução e saldo em tempo real. Veja para onde seu dinheiro vai, sem mistério.</p>
+          </article>
+          <article class="feature fade-up">
+            <div class="icon" aria-hidden="true">🧾</div>
+            <h3>Relatórios simples</h3>
+            <p>Exporte CSV e gere relatórios limpos para compartilhar ou guardar como histórico.</p>
+          </article>
         </div>
-        <div class="feature">
-            <h3>Resumo Financeiro</h3>
-            <p>Acompanhe o total de entradas, saídas e saldo em tempo real.</p>
-        </div>
-        <div class="feature">
-            <h3>Relatórios Personalizados</h3>
-            <p>Visualize seus dados em relatórios simples e claros.</p>
-        </div>
+      </div>
     </section>
 
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
-        <p>Se você tiver dúvidas ou sugestões, entre em contato conosco!</p>
-        <form id="contato-form">
+    <!-- CONTATO -->
+    <section id="contato" class="section container">
+      <h2>Contato</h2>
+      <p class="lead">Tem dúvidas, sugestões ou quer testar a versão beta? Fale com a gente.</p>
+      <div class="contact">
+        <form id="contato-form" novalidate>
+          <div>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div>
+            <label for="email">E‑mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+          </div>
+          <div>
             <label for="mensagem">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
-
-            <button type="submit" class="btn">Enviar Mensagem</button>
+          </div>
+          <button class="btn" type="submit">Enviar mensagem</button>
+          <p class="note">Respondemos em até 1 dia útil.</p>
+          <p id="form-status" class="status" role="status" aria-live="polite"></p>
         </form>
+        <aside class="box">
+          <h3>Fale direto</h3>
+          <p style="color:var(--ink-2); margin:8px 0 10px">Prefere outro canal? Também estamos por aqui:</p>
+          <ul style="display:grid; gap:10px; color:var(--ink-2)">
+            <li>• Email: contato@orcabem.app</li>
+            <li>• Instagram: @orcabem</li>
+            <li>• WhatsApp: (61) 9 9999‑9999</li>
+          </ul>
+        </aside>
+      </div>
     </section>
+  </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Organizador Financeiro. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <p>© <span id="year"></span> OrçaBem. Todos os direitos reservados.</p>
+      <div style="display:flex; gap:10px">
+        <a class="btn secondary" href="#top">Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
-
