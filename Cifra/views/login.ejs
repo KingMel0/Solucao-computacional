@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrçaBem • Login</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+  <main class="ob-container narrow">
+    <section class="ob-card">
+      <h2 class="ob-h2">Entrar no OrçaBem</h2>
+      <%- include('partials/flash') %>
+      <form action="/login" method="post" class="ob-form">
+        <label>E-mail</label>
+        <input type="email" name="email" required />
+        <label>Senha</label>
+        <input type="password" name="senha" required />
+        <button type="submit" class="ob-button">Entrar</button>
+      </form>
+      <p class="ob-muted">Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+    </section>
+  </main>
+</body>
+</html>

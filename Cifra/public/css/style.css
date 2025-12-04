@@ -1,0 +1,98 @@
+:root { --bg:#0e0f12; --card:#171a1f; --txt:#e9eef5; --muted:#9aa6b2; --accent:#4f8cff; }
+*{box-sizing:border-box} body{margin:0; font-family:system-ui,Segoe UI,Roboto,Ubuntu,sans-serif; background:var(--bg); color:var(--txt)}
+a{color:var(--accent); text-decoration:none}
+.ob-body{min-height:100vh}
+.ob-container{max-width:1100px; margin:24px auto; padding:0 16px}
+.ob-container.narrow{max-width:520px}
+.ob-hero{background:linear-gradient(180deg,#141821,#0f1117); border-bottom:1px solid #232936; padding:24px 0}
+.ob-hero__inner{max-width:1100px; margin:0 auto; padding:0 16px; display:flex; align-items:center; justify-content:space-between}
+.ob-brand{display:flex; gap:12px; align-items:center}
+.ob-logo{width:40px;height:40px;border-radius:10px;background:var(--accent); box-shadow:0 8px 24px rgba(79,140,255,.35)}
+.ob-kicker{margin:0; color:var(--muted); font-weight:600}
+.ob-title{margin:.2rem 0 0; font-size:28px}
+.ob-nav a{margin-left:16px; color:var(--muted)} .ob-nav a.active, .ob-nav a:hover{color:var(--txt)}
+.ob-hero__meter{max-width:1100px; margin:16px auto 0; padding:16px; display:flex; gap:24px; align-items:center; justify-content:space-between}
+.ob-hero__label{margin:0;color:var(--muted)} .ob-hero__value{margin:.25rem 0 0; font-size:32px; font-weight:800}
+.ob-pill{display:inline-block; margin-top:6px; padding:6px 10px; border:1px solid #2a3342; border-radius:999px; color:var(--muted); font-size:12px}
+.ob-kpis{display:flex; gap:16px}
+.ob-kpi{display:flex; gap:10px; align-items:center; background:#12151b; border:1px solid #212735; padding:10px 14px; border-radius:12px}
+.ob-kpi__label{margin:0; color:var(--muted)} .ob-kpi__value{margin:0; font-weight:700}
+.ob-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+.ob-col{display:flex; flex-direction:column; gap:16px}
+.ob-card{background:var(--card); border:1px solid #232936; border-radius:16px; padding:16px}
+.ob-card__head{display:flex; align-items:center; justify-content:space-between}
+.ob-h2{margin:0 0 6px} .ob-h3{margin:0 0 10px}
+.ob-lista{list-style:none; padding:0; margin:0} .ob-lista li{padding:10px 0; border-bottom:1px solid #232936}
+.ob-shortcuts{display:flex; flex-direction:column; gap:8px}
+.ob-shortcut{width:100%; display:flex; gap:12px; align-items:center; background:#12151b; border:1px solid #212735; color:var(--txt); padding:10px; border-radius:12px; cursor:pointer}
+.ob-footer{max-width:1100px; margin:20px auto; padding:0 16px; color:var(--muted)}
+.ob-form{display:grid; grid-template-columns:1fr; gap:10px}
+.ob-form.two-cols{grid-template-columns:1fr 1fr; gap:12px}
+.ob-form .full{grid-column:1/-1}
+.ob-button{background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700}
+.ob-button.ghost{background:transparent; border:1px solid #2a3342; color:var(--txt)}
+.ob-alert{padding:10px 12px; border-radius:10px; margin:8px 0}
+.ob-alert.error{background:#3b1d1f; color:#ffb3b8}
+.ob-alert.success{background:#1f2d1f; color:#b7ffb7}
+.inline{display:inline}
+.linklike{border:none; background:transparent; color:#9aa6ff; cursor:pointer}
+.ob-muted{color:var(--muted)}
+ .filtros-data{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
+      width:fit-content;
+      background: linear-gradient(180deg, #141821, #0f1117);
+      margin:10px 0;
+    }
+
+    .filtros-data label{
+      font-weight:bold;
+      color:#ffff;
+    }
+
+    .filtros-data input[type="date"]{
+      padding:8px 10px;
+      border-radius:6px;
+      border:1px solid #ccc;
+      font-size:14px;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .filtros-data input[type="date"]:focus{
+      border-color:#3a86ff;
+      box-shadow:0 0 4px rgba(58,134,255,0.5);
+      outline:none;
+    }
+
+    .filtros-data .ob-button{
+      padding:8px 14px;
+      background:#3a86ff;
+      color:white;
+      border:none;
+      border-radius:6px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.2s;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .filtros-data .ob-button:hover{
+      background:#1f6de0;
+    }
+
+    .filtros-data a.ob-button{
+      background:#666 !important;
+    }
+
+    .filtros-data a.ob-button:hover{
+      background:#4d4d4d !important;
+    }
+@media (max-width:900px){ .ob-grid{grid-template-columns:1fr} .ob-hero__meter{flex-direction:column; align-items:flex-start} .ob-kpis{width:100%} }

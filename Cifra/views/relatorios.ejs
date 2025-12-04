@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relatórios • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+  <header class="ob-hero">
+    <div class="ob-hero__inner">
+      <div class="ob-brand">
+        <div class="ob-logo"></div>
+        <div>
+          <p class="ob-kicker">OrçaBem</p>
+          <h1 class="ob-title">Relatórios</h1>
+        </div>
+      </div>
+      <%- include('partials/nav') %>
+    </div>
+  </header>
+
+  <main class="ob-container">
+    <section class="ob-card">
+      <h2 class="ob-h2">Exportar</h2>
+      <%- include('partials/flash') %>
+      <form action="/relatorios/exportar" method="post" class="ob-form two-cols">
+        <label>Início</label>
+        <input type="date" name="inicio" required />
+        <label>Fim</label>
+        <input type="date" name="fim" required />
+        <div class="full">
+          <button class="ob-button" name="formato" value="pdf" type="submit">Exportar PDF</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

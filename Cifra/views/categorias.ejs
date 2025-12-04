@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categorias • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+  <header class="ob-hero">
+    <div class="ob-hero__inner">
+      <div class="ob-brand">
+        <div class="ob-logo"></div>
+        <div>
+          <p class="ob-kicker">OrçaBem</p>
+          <h1 class="ob-title">Categorias</h1>
+        </div>
+      </div>
+      <%- include('partials/nav') %>
+    </div>
+  </header>
+
+  <main class="ob-container">
+    <section class="ob-card">
+      <div style="display: flex; justify-content: space-between;">
+        <h3 class="ob-h3">Suas categorias</h3>
+        <div class="full">
+        <button class="ob-button" onclick="window.location.href='/categorias/botao'">
+            Adicionar Categoria
+        </button>
+    </div>
+      </div>
+      <ul class="ob-lista">
+        <% if (categorias.length === 0) { %>
+          <li>Nenhuma categoria cadastrada.</li>
+        <% } %>
+        <% categorias.forEach(c => { %>
+          <li>
+            <%= c.nome %> — Limite: R$ <%= c.limite ? Number(c.limite).toFixed(2) : '0,00' %>
+            <form action="/categorias/<%= c.id %>/excluir" method="post" class="inline">
+              <button class="linklike" type="submit">excluir</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

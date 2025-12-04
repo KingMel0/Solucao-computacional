@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contas • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+<header class="ob-hero">
+  <div class="ob-hero__inner">
+    <div class="ob-brand">
+      <div class="ob-logo"></div>
+      <div>
+        <p class="ob-kicker">OrçaBem</p>
+        <h1 class="ob-title">Contas</h1>
+      </div>
+    </div>
+    <%- include('partials/nav') %>
+  </div>
+</header>
+
+<main class="ob-container">
+  <section class="ob-card">
+    <h2 class="ob-h2">Nova conta</h2>
+    <%- include('partials/flash') %>
+    <form action="/contas" method="post" class="ob-form two-cols">
+      <label>Nome</label><input type="text" name="nome" required />
+      <label>Saldo inicial</label><input type="number" step="0.01" name="saldo" />
+      <div class="full">
+        <label><input type="checkbox" name="bloquearDevedor" /> Cheque Especial</label>
+      </div>
+      <div class="full"><button class="ob-button" type="submit">Salvar</button></div>
+    </form>
+  </section>
+</main>
+</body>
+</html>

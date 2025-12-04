@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contas • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+<header class="ob-hero">
+  <div class="ob-hero__inner">
+    <div class="ob-brand">
+      <div class="ob-logo"></div>
+      <div>
+        <p class="ob-kicker">OrçaBem</p>
+        <h1 class="ob-title">Contas</h1>
+      </div>
+    </div>
+    <%- include('partials/nav') %>
+  </div>
+</header>
+
+<main class="ob-container">
+
+  <section class="ob-card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3 class="ob-h3">Suas contas</h3>
+          <div class="full">
+        <button class="ob-button" onclick="window.location.href='/contas/botao'">
+            Adicionar Conta
+        </button>
+    </div>  
+    </div>
+    <ul class="ob-lista">
+      <% if (!contas.length) { %><li>Nenhuma conta cadastrada.</li><% } %>
+      <% contas.forEach(c => { %>
+        <li>
+          <strong><%= c.nome %></strong> — Saldo: R$ <%= Number(c.saldo).toFixed(2) %> —
+          Cheque Especial: <%= c.bloquearDevedor ? 'ativado' : 'desativado' %>
+          <form class="inline" action="/contas/<%= c.id %>/bloqueio" method="post"><button class="linklike">alternar bloqueio</button></form>
+          <form class="inline" action="/contas/<%= c.id %>/excluir" method="post"><button class="linklike">excluir</button></form>
+        </li>
+      <% }) %>
+    </ul>
+    
+  </section>
+</main>
+</body>
+</html>

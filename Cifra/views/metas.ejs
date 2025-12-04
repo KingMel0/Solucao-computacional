@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metas • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+  <header class="ob-hero">
+    <div class="ob-hero__inner">
+      <div class="ob-brand">
+        <div class="ob-logo"></div>
+        <div>
+          <p class="ob-kicker">OrçaBem</p>
+          <h1 class="ob-title">Metas</h1>
+        </div>
+      </div>
+      <%- include('partials/nav') %>
+    </div>
+  </header>
+
+  <main class="ob-container">
+    <section class="ob-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 class="ob-h3">Minhas Metas</h3>
+                   <div class="full">
+        <button class="ob-button" onclick="window.location.href='/metas/botao'">
+            Adicionar Meta
+        </button>
+      </div>
+      </div>
+      <ul class="ob-lista">
+        <% if (metas.length === 0) { %>
+          <li>Nenhuma meta cadastrada.</li>
+        <% } %>
+        <% metas.forEach(m => { %>
+          <li>
+            <%= m.descricao %> — R$ <%= Number(m.valor).toFixed(2) %> — até <%= m.prazo %>
+            <form action="/metas/<%= m.id %>/excluir" method="post" class="inline">
+              <button class="linklike" type="submit">excluir</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+
+    </section>
+    </div>
+  </main>
+</body>
+</html>

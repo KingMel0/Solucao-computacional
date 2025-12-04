@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transações • OrçaBem</title>
+  <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+
+<body class="ob-body">
+  <header class="ob-hero">
+    <div class="ob-hero__inner">
+      <div class="ob-brand">
+        <div class="ob-logo"></div>
+        <div>
+          <p class="ob-kicker">OrçaBem</p>
+          <h1 class="ob-title">Transações</h1>
+        </div>
+      </div>
+      <%- include('partials/nav') %>
+    </div>
+  </header>
+
+  <main class="ob-container">
+    <div>
+    <section class="ob-card">
+      <h3 class="ob-h3">Transações existentes</h3>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <form action="/transacoes" method="get" class="filtros-data">
+        <label>Período:</label>
+        <input type="date" name="inicio" value="<%= inicio || '' %>">
+        <input type="date" name="fim" value="<%= fim || '' %>">
+        <button class="ob-button" type="submit">Filtrar</button>
+        <% if(inicio || fim){ %>
+          <a href="/transacoes" class="ob-button">Limpar</a>
+          <% } %>
+      </form>
+    
+      <div class="full">
+        <button class="ob-button" onclick="window.location.href='/transacoes/botao'">
+          Adicionar Transação
+        </button>
+      </div>
+    </div>
+    <br>
+
+      <ul class="ob-lista">
+        <% if (transacoes.length===0) { %>
+          <li>Nenhuma transação cadastrada.</li>
+          <% } %>
+            <% transacoes.forEach(t=> { %>
+              <li>
+                <strong>
+                  <%= t.tipo %>
+                </strong> —
+                <%= t.categoria ? t.categoria.nome : '-' %> —
+                  Conta: <%= t.conta ? t.conta.nome : '-' %> —
+                    R$ <%= Number(t.valor).toFixed(2) %> —
+                      <%= t.data %> —
+                        <em>
+                          <%= t.descricao || '' %>
+                        </em>
+                        <form action="/transacoes/<%= t.id %>/excluir" method="post" class="inline">
+                          <button class="linklike" type="submit">excluir</button>
+                        </form>
+              </li>
+              <% }) %>
+      </ul>
+    </section>
+
+  </main>
+</body>
+
+</html>

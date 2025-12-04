@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrçaBem • Página Principal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body class="ob-body">
+  <header class="ob-hero">
+    <div class="ob-hero__inner">
+      <div class="ob-brand">
+        <div class="ob-logo"></div>
+        <div>
+          <p class="ob-kicker">OrçaBem</p>
+          <h1 class="ob-title">Painel Financeiro - <%= user.nome %></h1>
+        </div>
+      </div>
+      <%- include('partials/nav') %>
+    </div>
+
+    <div class="ob-hero__meter">
+      <div>
+        <p class="ob-hero__label">Saldo Total</p>
+        <p class="ob-hero__value" id="saldoTotal">R$ <%= saldoTotal %></p>
+        <span class="ob-pill" id="pillComparativo">Inclui saldos de todas as contas</span>
+      </div>
+
+      <div class="ob-kpis">
+        <div class="ob-kpi">
+          <div class="ob-kpi__icon">💸</div>
+          <div>
+            <p class="ob-kpi__label">Renda do Mês</p>
+            <p class="ob-kpi__value" id="kpiRenda">R$ <%= receitasMes %></p>
+          </div>
+        </div>
+        <div class="ob-kpi">
+          <div class="ob-kpi__icon">📉</div>
+          <div>
+            <p class="ob-kpi__label">Despesas do Mês</p>
+            <p class="ob-kpi__value" id="kpiDesp">R$ <%= despesasMes %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="ob-container">
+
+    <div class="ob-grid">
+      <!-- ===================== COLUNA PRINCIPAL ===================== -->
+      <div class="ob-col">
+
+        <!-- 🔹 Transações Recentes -->
+        <section class="ob-card">
+          <div class="ob-card__head">
+            <h2 class="ob-h2">Transações Recentes</h2>
+          </div>
+
+          <%- include('partials/flash') %>
+
+          <% if (typeof pendentes !== 'undefined' && pendentes > 0) { %>
+            <p class="ob-alert success">
+              Você tem <strong><%= pendentes %></strong> transação(ões) pendente(s).
+            </p>
+          <% } %>
+
+          <ul class="ob-lista" id="listaTransacoes">
+            <% if (transacoes.length === 0) { %>
+              <li>Nenhuma transação ainda.</li>
+            <% } %>
+            <% transacoes.forEach(t => { %>
+              <li>
+                <strong><%= t.tipo %></strong> —
+                <%= t.descricao || '-' %> 
+                R$ <%= Number(t.valor).toFixed(2) %>
+                (<%= t.data %>) •
+                <em><%= t.categoria ? t.categoria.nome : '' %></em>
+              </li>
+            <% }) %>
+          </ul>
+        </section>
+
+
+        <!-- 🔹 METAS — AGORA ABAIXO DAS TRANSAÇÕES -->
+        <section class="ob-card">
+          <div class="ob-card__head">
+            <h2 class="ob-h2">🎯 Metas Financeiras</h2>
+          </div>
+
+          <ul class="ob-lista" id="listaMetas">
+            <% if (metas.length === 0) { %>
+              <li>Nenhuma meta cadastrada ainda.</li>
+            <% } %>
+
+            <% metas.forEach(m => { %>
+              <li>
+                <strong><%= m.descricao %></strong> — 
+                Objetivo: R$ <%= Number(m.valor).toFixed(2) %> • Prazo: <%= m.prazo %>
+              </li>
+            <% }) %>
+          </ul>
+        </section>
+
+      </div>
+
+
+      <!-- ===================== COLUNA LATERAL ===================== -->
+      <aside class="ob-col">
+        <section class="ob-card">
+          <h3 class="ob-h3">Projeção de custos e ganhos:</h3>
+          <ul class="ob-impacto">
+            <li><span>Receitas: </span><strong id="resumoRenda">R$ <%= ganhosFixos %></strong></li>
+            <li><span>Despesas: </span><strong id="resumoDespesa">R$ <%= custosFixos %></strong></li>
+            <li><span>Ganho/perda líquida : </span><strong id="resumoDespesa">R$ <%= ganhosFixos - custosFixos %></strong></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+  </main>
+
+  <footer class="ob-footer">Feito para o seu controle financeiro</footer>
+
+</body>
+</html>

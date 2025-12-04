@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrçaBem • Cadastro</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="ob-body">
+  <main class="ob-container narrow">
+    <section class="ob-card">
+      <h2 class="ob-h2">Criar conta</h2>
+      <%- include('partials/flash') %>
+      <form action="/cadastro" method="post" class="ob-form">
+        <label>Nome</label>
+        <input type="text" name="nome" required />
+        <label>E-mail</label>
+        <input type="email" name="email" required />
+        <label>Senha</label>
+        <input type="password" name="senha" required />
+        <button type="submit" class="ob-button">Cadastrar</button>
+      </form>
+      <p class="ob-muted">Já tem conta? <a href="/login">Fazer login</a></p>
+    </section>
+  </main>
+</body>
+</html>
